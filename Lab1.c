@@ -4,8 +4,8 @@
 #define PI 3.14159
 
 float diameter(float , float , float , float );
-float area(float r);
-float perimeter(float r);
+float area(float );
+float perimeter(float );
 
 int main()
 {
