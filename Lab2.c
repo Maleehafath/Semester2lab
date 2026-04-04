@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int largest(int a, int b, int c);
-int smallest(int a, int b, int c);
-float average(int a, int b, int c, int *v);
+int largest(int , int , int );
+int smallest(int , int , int );
+float average(int , int , int , int *v);
 
 int main()
 {
