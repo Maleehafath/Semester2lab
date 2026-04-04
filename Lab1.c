@@ -3,7 +3,7 @@
 
 #define PI 3.14159
 
-float diameter(float x1, float y1, float x2, float y2);
+float diameter(float , float , float , float );
 float area(float r);
 float perimeter(float r);
 
