@@ -60,7 +60,6 @@ int main()
     /* Finding Second Largest */
 
     largest=a[0][0];
-    second=a[0][0];
 
     for(i=0;i<m;i++)
     {
@@ -71,7 +70,7 @@ int main()
                 second=largest;
                 largest=a[i][j];
             }
-            else if(a[i][j]>second && a[i][j]!=largest)
+            else if(a[i][j]>second && a[i][j]<largest)
             {
                 second=a[i][j];
             }
