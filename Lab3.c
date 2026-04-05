@@ -12,73 +12,53 @@ long int fact(int n)
 
 int main()
 {
-    float x,sum=0;
-    int i,n,sign=1;
+    double x,term,sum=0;
+    int n=1,sign=1;
 
     printf("Enter x in radians: ");
-    scanf("%f",&x);
-
-    printf("Enter number of terms: ");
-    scanf("%d",&n);
-
-    for(i=1;i<=n;i++)
+    scanf("%lf",&x);
+    
+    while(1)
     {
-        sum = sum + sign * pow(x,(2*i-1)) / fact(2*i-1);
-        sign = -sign;
+        term=pow(x,n)/(double)fact(n);
+        if (fabs(term)<0.0000001)
+            break;
+        sum+=sign*term;
+        sign=-sign;
+        n+=2;
     }
 
-    printf("sin(x) = %f",sum);
+    printf("sin(x) = %lf",sum);
 
-    return 0;
-}#include<stdio.h>
-#include<math.h>
+    double term2,sum2=1;
+    n=2;
+    sign=-1;
 
-long int fact(int n)
-{
+    printf("\nEnter x in radians: ");
+    scanf("%lf",&x);
+
+    while(1)
+    {
+        term2=pow(x,n)/(double)fact(n);
+        if (fabs(term2)<0.0000001)
+            break;
+        sum2+=sign*term2;
+        sign=-sign;
+        n+=2;
+    }
+
+    printf("cos(x) = %lf",sum2);
+    
+    sum=1.0;
     int i;
-    long int f=1;
-    for(i=1;i<=n;i++)
-        f=f*i;
-    return f;
-}
-
-int main()
-{
-    float x,sum=0;
-    int i,n,sign=1;
-
-    printf("Enter x in radians: ");
-    scanf("%f",&x);
-
-    printf("Enter number of terms: ");
+    printf("\nEnter number of terms: ");
     scanf("%d",&n);
-
-    for(i=0;i<n;i++)
-    {
-        sum = sum + sign * pow(x,(2*i)) / fact(2*i);
-        sign = -sign;
-    }
-
-    printf("cos(x) = %f",sum);
-
-    return 0;
-}#include<stdio.h>
-#include<math.h>
-
-int main()
-{
-    int i,n;
-    float sum=1;
-
-    printf("Enter number of terms: ");
-    scanf("%d",&n);
-
+    
     for(i=2;i<=n;i++)
     {
         sum = sum + pow((1.0/i),i);
     }
 
     printf("Sum = %f",sum);
-
     return 0;
 }
